@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .container-center {
   height: 100%;
   display: -webkit-box;
@@ -146,6 +150,51 @@
 
 .container-center .login a img {
   width: 18px;
+}
+
+.container-center li {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  -webkit-animation: up 2s infinite;
+          animation: up 2s infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes up {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-1000px) rotate(960deg);
+            transform: translateY(-1000px) rotate(960deg);
+  }
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-1000px) rotate(960deg);
+            transform: translateY(-1000px) rotate(960deg);
+  }
 }
 
 @-webkit-keyframes fade {
