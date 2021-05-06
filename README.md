@@ -1,7 +1,13 @@
 # App Pague Facil
+### Iniciar projeto
 
- - Para rodar o projeto voce precisa rodar o comando ``` yarn start ou nom start ```;
- 
+ - Para rodar o projeto voce precisa rodar o comando ``` yarn start ou npm start ```;
+
+
+### Dependências do projeto
+
+ - Banco de Dados -> Firebase = Comando para instalação ``` yarn add firebase ou npm install firebase ```;
+ - Rotas -> React Router DOM = Comando para instalação ``` yarn add react-router-dom ou nom install react-router-dom ```;
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

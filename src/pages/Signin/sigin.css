@@ -1,0 +1,118 @@
+.container-center {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3e9278;
+}
+
+.container-center .login {
+  background-color: #b8d8c0;
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+}
+
+.container-center .login .logo-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #74baa0;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.container-center .login .logo-area img {
+  padding: 20px;
+  width: 170px;
+}
+
+.container-center .login .logo-area h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 18rem;
+  font-size: 50px;
+  color: #000;
+}
+
+.container-center .login form {
+  margin-top: 1.5rem;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container-center .login form h2 {
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: #000;
+}
+
+.container-center .login form button {
+  height: 35px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #3e9278;
+  color: #FFF;
+  font-size: 1.3em;
+  font-family: 'Rubik', sans-serif;
+}
+
+.container-center .login input {
+  margin-bottom: 15px;
+  height: 35px;
+  border: 0;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #FFF;
+}
+
+.container-center .login a {
+  margin: 1.0rem 0;
+  color: #3e9278;
+  height: 35px;
+  border: 0;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.container-center .login a img {
+  width: 18px;
+}
+/*# sourceMappingURL=sigin.css.map */
