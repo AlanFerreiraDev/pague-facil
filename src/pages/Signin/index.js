@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 //css
-import './sigin.css';
+import './signin.css';
 
 //img
 import logo from '../../assets/logo.png';
@@ -14,6 +14,11 @@ function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('CLICOU')
+  }
+
   return (
     <div className="container-center">
       <div className="login">
@@ -22,15 +27,15 @@ function SignIn() {
           <img src={logo} alt="Pague Fácil Logo" width="10px"/>
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2>Entrar</h2>
-          <input type="text" placeholder="email@email.com" />
-          <input type="password" placeholder="********"/>
+          <input type="text" placeholder="email@email.com" value={email} onChange={ (e) => setEmail(e.target.value)} />
+          <input type="password" placeholder="********" value={password} onChange={ (e) => setPassword(e.target.value)} />
           <button type="submit">Acessar sua Conta</button>
         </form>
 
         <Link to="/register">
-          Faça Parte dos PagLovers e Crie uma conta agora   
+          Faça parte dos <strong>Pag Lovers</strong> e abra uma conta agora  
           <span>
             <img src={moeda} alt="Coracao Pague Facil"/>
           </span>
