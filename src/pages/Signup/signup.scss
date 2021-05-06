@@ -1,11 +1,11 @@
-.container-center {
+.container-center-up {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #3e9278;
 
-  .login {
+  .login-up {
     background-color: #b8d8c0;
     width: 600px;
     display: flex;
@@ -13,8 +13,10 @@
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
+    animation-name: fade;
+    animation-duration: .4s;
 
-    .logo-area {
+    .logo-area-up {
       display: flex;
       justify-content: center;
       background-color: #74baa0;
@@ -31,7 +33,7 @@
         justify-content: center;
         align-items: center;
         width: 18rem;
-        font-size: 50px;
+        font-size: 35px;
         color: #000;
       }
     }
@@ -55,7 +57,12 @@
         background-color: #3e9278;
         color: #FFF;
         font-size: 1.3em;
-        font-family: 'Rubik', sans-serif;;
+        font-family: 'Rubik', sans-serif;
+        transition: filter 1s;
+
+        &:hover {
+          filter: brightness(0.8);
+        }
       }
     }
 
@@ -67,6 +74,11 @@
       padding: 10px;
       font-size: 16px;
       background-color: #FFF;
+      transition: filter 1s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
     }
 
     a {
@@ -78,10 +90,25 @@
       padding: 10px;
       font-size: 18px;
       cursor: pointer;
+      transition: filter 1s;
+
+      &:hover {
+        filter: brightness(0.8);
+      }
 
       img {
         width: 18px;
       }
     }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  } to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

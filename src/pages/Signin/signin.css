@@ -29,6 +29,10 @@
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 10px;
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
 }
 
 .container-center .login .logo-area {
@@ -89,6 +93,15 @@
   color: #FFF;
   font-size: 1.3em;
   font-family: 'Rubik', sans-serif;
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
+}
+
+.container-center .login form button:hover {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
 }
 
 .container-center .login input {
@@ -99,6 +112,15 @@
   padding: 10px;
   font-size: 16px;
   background-color: #FFF;
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
+}
+
+.container-center .login input:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
 }
 
 .container-center .login a {
@@ -111,9 +133,44 @@
   font-size: 18px;
   cursor: pointer;
   text-decoration: underline;
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
+}
+
+.container-center .login a:hover {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
 }
 
 .container-center .login a img {
   width: 18px;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=signin.css.map */

@@ -25,6 +25,12 @@ function AuthProvider({ children }) {
     loadStorage();
   }, [])
 
+  //função para castro de usuários
+  async function signUp(nome, email, password) {
+    setLoading(true);
+    await firebase.auth().createUserWithEmailAndPassword(email, password)
+  }
+
   return (
     // !!user, converte valor para booleano, user = obj
     <AuthContext.Provider value={{ signed: !!user, user, loading }}>

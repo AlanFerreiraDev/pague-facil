@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import './signup.css';
 
 //img
-import logo from '../../assets/logo.png';
 import moeda from '../../assets/spanMoeda.png';
 
 function SignUp() {
@@ -21,18 +20,17 @@ function SignUp() {
   }
 
   return (
-    <div className="container-center">
-      <div className="login">
-        <div className="logo-area">
+    <div className="container-center-up">
+      <div className="login-up">
+        <div className="logo-area-up">
           <h1>Pague Fácil</h1>
-          <img src={logo} alt="Pague Fácil Logo" width="10px"/>
         </div>
 
         <form onSubmit={handleSubmit}>
           <h2>Cadastre sua Conta aqui</h2>
           <input type="text" placeholder="Seu Nome" vlaue={nome} onChange={ (e) => setNome(e.target.value)}/>
           <input type="text" placeholder="email@email.com" value={email} onChange={ (e) => setEmail(e.target.value)} />
-          <input type="password" placeholder="********" value={password} onChange={ (e) => setPassword(e.target.value)} />
+          <input type="password" placeholder="Sua Senha" value={password} onChange={ (e) => setPassword(e.target.value)} />
           <button type="submit">Cadastrar</button>
         </form>
 

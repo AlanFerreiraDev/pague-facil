@@ -30,7 +30,7 @@ function SignIn() {
         <form onSubmit={handleSubmit}>
           <h2>Entrar</h2>
           <input type="text" placeholder="email@email.com" value={email} onChange={ (e) => setEmail(e.target.value)} />
-          <input type="password" placeholder="********" value={password} onChange={ (e) => setPassword(e.target.value)} />
+          <input type="password" placeholder="Sua Senha" value={password} onChange={ (e) => setPassword(e.target.value)} />
           <button type="submit">Acessar sua Conta</button>
         </form>
 
