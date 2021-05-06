@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# App Pague Facil
+
+ - Para rodar o projeto voce precisa rodar o comando ``` yarn start ou nom start ```;
+ 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
