@@ -1,15 +1,20 @@
 // Pagina criada para controlar a lógica de rotas,caso o user não esteja logado (permissões)
+//react
+import { useContext } from 'react';
+
+//routes
 import {Route, Redirect} from 'react-router-dom';
 
-// 
+//context
+import { AuthContext } from '../contexts/auth';
+
 export default function RouterWrapper({
   component: Component,
   isPrivate,
   ...rest
 }){
 
-  const loading = false; // carregando
-  const signed = false;  // logado
+  const { signed, loading } = useContext(AuthContext);
 
   if(loading) {
     return(
@@ -25,7 +30,7 @@ export default function RouterWrapper({
 
   if(signed && !isPrivate) {
     return (
-      <Redirect to="/carteira" />
+      <Redirect to="/digital" />
     )
   }
 
