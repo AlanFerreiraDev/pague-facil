@@ -44,7 +44,7 @@ body {
 
     form {
       margin-top: 1.5rem;
-      width: 90%;
+      width: 75%;
       display: flex;
       flex-direction: column;
 
@@ -96,6 +96,8 @@ body {
       cursor: pointer;
       text-decoration: underline;
       transition: filter 1s;
+      width: 80% !important;
+      padding-bottom: 4rem !important;
 
       &:hover {
         filter: brightness(0.8);
@@ -118,7 +120,6 @@ body {
     bottom: 0;
     animation: up 2s infinite;
     animation-direction: alternate;
-
   }
 }
 
@@ -141,5 +142,91 @@ body {
   } to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+//responsive
+@media (min-width: 2560px) {
+  .login {
+    width: 40% !important;
+  }
+  form {
+    width: 75% !important;
+  }
+
+
+}
+@media (max-width: 800px)  {
+    .login {
+      width: 80% !important;
+    }
+
+    form {
+      width: 75% !important;
+    }
+}
+
+@media (max-width: 650px) {
+
+  h1 {
+    font-size: 3rem !important;
+    padding-left: 2rem;
+    gap: 1rem;
+  }
+
+  a {
+    width: 75% !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+@media (max-width: 425px) {
+  #root {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .container-center {
+    width: 425px !important;
+    height: 100vh !important;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    padding-left: 2rem;
+    gap: 1rem;
+  }
+
+  form {
+    width: 75% !important;
+  }
+
+  a {
+    width: 75% !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .login {
+    width: 80% !important;
+  }
+
+}
+
+@media (max-width: 360px) {
+  form {
+    width: 75% !important;
+  }
+
+  .login {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 320px) {
+  form {
+    width: 75% !important;
+  }
+
+  .login {
+    width: 80% !important;
   }
 }

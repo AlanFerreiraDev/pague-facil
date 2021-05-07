@@ -49,7 +49,7 @@ function SignIn() {
       <div className="login">
         <div className="logo-area">
           <h1>Pague Fácil</h1>
-          <img src={logo} alt="Pague Fácil Logo" width="10px"/>
+          <img src={logo} alt="Pague Fácil Logo" />
         </div>
 
         <form onSubmit={handleSubmit}>
