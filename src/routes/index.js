@@ -6,6 +6,8 @@ import Route from './Route';
 import SignIn from '../pages/Signin';
 import SignUp from '../pages/Signup';
 import Digital from '../pages/Digital';
+import Profile from '../pages/Profile';
+
 
 export default function Routes() {
 
@@ -14,7 +16,8 @@ export default function Routes() {
     <Switch>
       <Route exact path="/" component={SignIn} />
       <Route exact path="/register" component={SignUp} />
-      <Route exact path="/digital" component={Digital} isPrivate/>
+      <Route exact path="/digital" component={Digital} isPrivate />
+      <Route exact path="/profile" component={Profile} isPrivate />
     </Switch>
   )
 }

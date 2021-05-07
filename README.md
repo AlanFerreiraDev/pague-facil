@@ -6,8 +6,10 @@
 
 ### Dependências do projeto
 
- - Banco de Dados -> Firebase = Comando para instalação ``` yarn add firebase ou npm install firebase ```;
- - Rotas -> React Router DOM = Comando para instalação ``` yarn add react-router-dom ou nom install react-router-dom ```;
+ - Banco de Dados -> Firebase = Comando que usei para instalação ``` yarn add firebase ou npm install firebase ```;
+ - Rotas -> React Router DOM = Comando que usei para instalação ``` yarn add react-router-dom ou nom install react-router-dom ```;
+ - Alertas -> Toastify = Comando que usei para instalação ``` npm install react-toastify ou yarn ass react-toastify ```;
+ - Ícones -> React Icons = COmando que usei para instalação ``` npm install react-icons ou yarn add react-icons ```;
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

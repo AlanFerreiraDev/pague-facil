@@ -1,0 +1,185 @@
+body {
+  background-color: #74baa0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #b8d8c0;
+  border-radius: 5px;
+  padding: .8em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1em;
+  width: 300px;
+}
+
+.container .form-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .form-profile img {
+  margin-bottom: 1em;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .form-profile label {
+  margin-bottom: .5em;
+  font-size: 1.4em;
+}
+
+.container .form-profile input, .container .form-profile textarea, .container .form-profile select {
+  margin-bottom: 1em;
+  padding: .7em;
+  border: 0;
+  border-radius: 5px;
+  max-width: 600px;
+}
+
+.container .form-profile input:disabled {
+  cursor: not-allowed;
+}
+
+.container .form-profile button {
+  height: 35px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #3e9278;
+  color: #FFF;
+  font-size: 1.3em;
+  font-family: 'Rubik', sans-serif;
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
+}
+
+.container .form-profile button[type="submit"] {
+  margin-bottom: 1em;
+}
+
+.container .form-profile button:hover {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+}
+
+.container .form-profile .label-avatar {
+  width: 200px;
+  height: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  margin: 1rem 2rem;
+}
+
+.container .form-profile .label-avatar input {
+  display: none;
+}
+
+.container .form-profile .label-avatar span {
+  z-index: 99;
+  position: absolute;
+  opacity: 0.7;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.container .form-profile .label-avatar span:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  cursor: pointer;
+}
+
+.content-logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-logout .logout-btn {
+  width: 5em;
+  height: 35px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #3e9278;
+  color: #FFF;
+  font-size: 1.3em;
+  font-family: 'Rubik', sans-serif;
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.content-logout .logout-btn:hover {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+}
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  .content {
+    margin-top: 20px;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "title container" "content-logout container";
+    grid-gap: 20px;
+  }
+  .content .container {
+    grid-area: "container";
+    grid-row: container;
+  }
+  .content .content-logout {
+    grid-area: "content-logout";
+    grid-row: content-logout;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .title {
+    grid-area: "title";
+    grid-row: title;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  form {
+    width: 75% !important;
+  }
+}
+/*# sourceMappingURL=profile.css.map */

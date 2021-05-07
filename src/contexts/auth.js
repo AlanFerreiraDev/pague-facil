@@ -2,6 +2,9 @@
 import { useState, useEffect, createContext } from 'react';
 import firebase from '../services/firebaseConnection';
 
+//alerts
+import { toast } from 'react-toastify';
+
 export const AuthContext = createContext({}); 
 
 function AuthProvider({ children }) {
@@ -25,15 +28,98 @@ function AuthProvider({ children }) {
     loadStorage();
   }, [])
 
-  //função para castro de usuários
+  //Login User
+  async function signIn(email, password) {
+    setLoadingAuth(true);
+
+    await firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(async (value) => {
+      let uid = value.user.uid;
+
+      const userProfile = await firebase.firestore().collection('users')
+      .doc(uid).get();
+
+      let data = {
+        uid: uid,
+        nome: userProfile.data().nome,
+        avatarUrl: userProfile.data().avatarUrl,
+        email: value.user.email
+      }
+
+      setUser(data);
+      storageUser(data);
+      setLoadingAuth(false);
+      toast.success(`Bem vindo  de Volta ao Pague Fácil ${data.nome}`);
+    })
+    .catch((error) => {
+      console.log(error);
+      toast.error('Ops, algo deu errado!');
+      setLoadingAuth(false);
+    })
+  }
+
+  //Cadastro User
   async function signUp(nome, email, password) {
-    setLoading(true);
+    setLoadingAuth(true);
     await firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then( async (value) => {
+      let uid = value.user.uid;
+      // Cadastro no BD
+      await firebase.firestore().collection('users')
+      .doc(uid).set({
+        nome: nome,
+        avatar: null,
+      })
+      // Passo p setUser 
+      .then( () => {
+        let data = {
+          uid: uid,
+          nome: nome,
+          email: value.user.email,
+          avatarUrl: null
+        };
+
+        setUser(data);
+        storageUser(data);
+        setLoadingAuth(false);
+        toast.success(`Bem vindo ao Pague Fácil ${data.nome}`);
+
+      })
+
+    })
+    .catch((error) => {
+      console.log(error);
+      toast.error('Ops, algo deu errado!');
+      setLoadingAuth(false);
+    })
+
+  }
+
+  // Salvar no localStorage
+  function storageUser(data) {
+    localStorage.setItem('PagUser', JSON.stringify(data));
+  }
+
+  //LogOut DB, limpa localStorage e seta estado
+  async function signOut() {
+    await firebase.auth().signOut();
+    localStorage.removeItem('PagUser');
+    setUser(null);
   }
 
   return (
     // !!user, converte valor para booleano, user = obj
-    <AuthContext.Provider value={{ signed: !!user, user, loading }}>
+    <AuthContext.Provider 
+      value={{ 
+        signed: !!user, 
+        user, 
+        loading, 
+        signUp,
+        signOut,
+        signIn,
+        loadingAuth
+      }}
+      >
       {children}
     </AuthContext.Provider>
 

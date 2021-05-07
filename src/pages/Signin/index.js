@@ -1,6 +1,7 @@
 //react
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/auth';
 
 //css
 import './signin.css';
@@ -14,9 +15,14 @@ function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { signIn, loadingAuth } = useContext(AuthContext);
+
   function handleSubmit(e) {
     e.preventDefault();
-    alert('CLICOU')
+
+    if (email !== '' && password !== '') {
+      signIn(email, password)
+    }
   }
 
   function squares() {
@@ -54,9 +60,12 @@ function SignIn() {
 
         <form onSubmit={handleSubmit}>
           <h2>Entrar</h2>
+          <label htmlFor="email">Email: </label>
           <input type="text" placeholder="email@email.com" value={email} onChange={ (e) => setEmail(e.target.value)} />
+
+          <label htmlFor="password">Senha: </label>
           <input type="password" placeholder="Sua Senha" value={password} onChange={ (e) => setPassword(e.target.value)} />
-          <button type="submit">Acessar sua Conta</button>
+          <button type="submit">{loadingAuth ? 'Carregando...' : 'Acessar sua Conta'}</button>
         </form>
 
         <Link to="/register">

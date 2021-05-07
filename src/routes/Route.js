@@ -4,6 +4,7 @@ import { useContext } from 'react';
 
 //routes
 import {Route, Redirect} from 'react-router-dom';
+// import { Route } from './index';
 
 //context
 import { AuthContext } from '../contexts/auth';
@@ -11,6 +12,7 @@ import { AuthContext } from '../contexts/auth';
 export default function RouterWrapper({
   component: Component,
   isPrivate,
+  // path,
   ...rest
 }){
 
@@ -33,6 +35,12 @@ export default function RouterWrapper({
       <Redirect to="/digital" />
     )
   }
+
+  // if(path === '/digital') {
+  //   return (
+  //     <Redirect to="/" />
+  //   )
+  // }
 
   return(
     <Route
