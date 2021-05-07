@@ -143,6 +143,7 @@ body {
   transition: filter 1s, -webkit-filter 1s;
   width: 80% !important;
   padding-bottom: 4rem !important;
+  text-align: center;
 }
 
 .container-center .login a:hover {

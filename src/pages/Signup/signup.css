@@ -69,7 +69,7 @@
 
 .container-center-up .login-up form {
   margin-top: 1.5rem;
-  width: 90%;
+  width: 75%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,6 +136,9 @@
   transition: -webkit-filter 1s;
   transition: filter 1s;
   transition: filter 1s, -webkit-filter 1s;
+  width: 80% !important;
+  padding-bottom: 4rem !important;
+  text-align: center;
 }
 
 .container-center-up .login-up a:hover {
@@ -170,6 +173,98 @@
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@media (min-width: 2560px) {
+  .login-up {
+    width: 40% !important;
+  }
+  form {
+    width: 75% !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .login-up {
+    width: 80% !important;
+  }
+  form {
+    width: 75% !important;
+  }
+}
+
+@media (max-width: 650px) {
+  h1 {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    text-align: center !important;
+    font-size: 2rem !important;
+    padding-left: 0;
+  }
+  a {
+    width: 75% !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+@media (max-width: 425px) {
+  #root {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .container-center-up {
+    width: 425px !important;
+    height: 100vh !important;
+  }
+  h1 {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    text-align: center !important;
+    font-size: 2rem !important;
+    padding-left: 0;
+  }
+  form {
+    width: 75% !important;
+  }
+  a {
+    width: 75% !important;
+    padding-bottom: 4rem !important;
+  }
+  .login-up {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 360px) {
+  form {
+    width: 75% !important;
+  }
+  .login-up {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 320px) {
+  form {
+    width: 75% !important;
+  }
+  .login-up {
+    width: 80% !important;
   }
 }
 /*# sourceMappingURL=signup.css.map */
