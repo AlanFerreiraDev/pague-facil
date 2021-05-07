@@ -59,13 +59,18 @@ body {
 
   .label-avatar {
     width: 200px;
-    height: 220px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     cursor: pointer;
     margin: 1rem 2rem;
+
+    img {
+      width: 170px;
+      // height: 350px;
+    }
 
     input {
       display: none;

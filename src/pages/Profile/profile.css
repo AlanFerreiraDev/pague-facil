@@ -75,7 +75,7 @@ body {
 
 .container .form-profile .label-avatar {
   width: 200px;
-  height: 220px;
+  height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,6 +91,10 @@ body {
           flex-direction: column;
   cursor: pointer;
   margin: 1rem 2rem;
+}
+
+.container .form-profile .label-avatar img {
+  width: 170px;
 }
 
 .container .form-profile .label-avatar input {
