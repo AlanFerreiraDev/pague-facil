@@ -29,15 +29,10 @@ export default function Header() {
           Carteira Digital
       </Link>
 
-      <Link to="/digital">
-        <FaUser color="#FFF" size={24}/>
-          Clientes
+      <Link to="/profile">
+        <IoSettingsSharp color="#FFF" size={24}/>
+          Configurações
       </Link>
-
-    <Link to="/profile">
-      <IoSettingsSharp color="#FFF" size={24}/>
-        Configurações
-    </Link>
     </div>
   )
 }

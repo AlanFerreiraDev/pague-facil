@@ -48,8 +48,7 @@ export default function New(){
     })
     .catch((err) => {
       toast.error('Ops, erro ao registar seu pagamento, por favor tente mais tarde.');
-
-
+      //segurança
       console.log(err);
     })
   }
