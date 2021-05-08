@@ -47,9 +47,9 @@ export default function Digital() {
               <thead>
                 <tr>
                   <th scope="col">Tipo</th>
-                  <th scope="col">Empresa</th>
+                  <th scope="col">Recebedor</th>
                   {/*<th scope="col">Status</th>*/}
-                  <th scope="col">Cadastrado em</th>
+                  <th scope="col">Data</th>
                   <th scope="col">Valor</th>
                   <th scope="col">#</th>
                 </tr>
@@ -57,7 +57,7 @@ export default function Digital() {
               <tbody>
                 <tr>
                   <td data-label="Tipo">Pix</td>
-                  <td data-label="Empresa">Renner</td>
+                  <td data-label="Recebedor">Renner</td>
                   {/*<td data-label="Status">
                     <span className="badge" style={{backgroundColor: '#5cb85c' }}>Em aberto</span>
             </td> */}

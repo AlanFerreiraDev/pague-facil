@@ -1,0 +1,65 @@
+.container-new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #74baa0 !important;
+  border-radius: 5px;
+  padding: .8em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1em;
+  width: 300px;
+}
+
+.container-new .form-profile-new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container-new .form-profile-new label {
+  margin-bottom: .5em;
+  font-size: 1.4em;
+}
+
+.container-new .form-profile-new input, .container-new .form-profile-new select {
+  margin-bottom: 1em;
+  padding: .7em;
+  border: 0;
+  border-radius: 5px;
+  max-width: 600px;
+  background-color: #FFF !important;
+}
+
+.container-new .form-profile-new input:disabled {
+  cursor: not-allowed;
+}
+
+.container-new .form-profile-new button {
+  height: 35px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #3e9278;
+  color: #FFF;
+  font-size: 1.3em;
+  font-family: 'Rubik', sans-serif;
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
+}
+
+.container-new .form-profile-new button[type="submit"] {
+  margin-bottom: 1em;
+}
+
+.container-new .form-profile-new button:hover {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+}
+/*# sourceMappingURL=new.css.map */
