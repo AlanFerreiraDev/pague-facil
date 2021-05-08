@@ -1,10 +1,16 @@
 //components
 import Header from '../../components/Header';
 import Title from '../../components/Title';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 //routes
 import { Link } from 'react-router-dom';
+
+//BD
+import firebase from '../../services/firebaseConnection';
+
+//date-format
+import { format } from 'date-fns';
 
 //icons
 import { MdPayment } from 'react-icons/md';
@@ -14,8 +20,101 @@ import { FiSearch, FiEdit2 } from 'react-icons/fi';
 //styles
 import './digital.css';
 
+//Referencia de Busca no BD
+const listRef = firebase.firestore().collection('payments').orderBy('created', 'desc');
+
 export default function Digital() {
-  const [pagamentos, setPagamentos] = useState([1]);
+  const [pagamentos, setPagamentos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
+  const [lastDocs, setLastDocs] = useState();
+
+  useEffect(()=> {
+
+    loadPagamentos();
+
+    return () => {
+
+    }
+  }, []);
+
+
+  async function loadPagamentos() {
+    await listRef.limit(5)
+    .get()
+    //snapshot para entrar na documentação do firebase
+    .then((snapshot)=> {
+      updateState(snapshot)
+
+    })
+    .catch((err)=> {
+      console.log(`Erro: ${err}`);
+      setLoadingMore(false);
+    })
+
+    setLoading(false);
+
+  }
+
+  async function updateState(snapshot) {
+    const isCollectionEmpty = snapshot.size === 0;
+
+    if(!isCollectionEmpty) {
+      let lista = [];
+
+      snapshot.forEach((doc) => {
+        lista.push({
+          id: doc.id,
+          boleto: doc.data().boleto,
+          created: doc.data().created,
+          createdFormated: format(doc.data().created.toDate(), 'dd/MM/yyyy'),
+          recebedor: doc.data().recebedor,
+          tipo: doc.data().tipo,
+          userId: doc.data().userId,
+          valor: doc.data().valor
+        })
+      })
+      //buscar ultimo item buscado
+      const lastDoc = snapshot.docs[snapshot.docs.length -1];
+      //pega todos os pagamentos e se carregou mais acrescenta as listas a mais
+      setPagamentos(pagamentos => [...pagamentos, ...lista])
+      setLastDocs(lastDoc);
+
+    } else {
+      setIsEmpty(true);
+    }
+    setLoadingMore(false);
+  }
+
+  //botão Mais Pagtos.
+  async function handleMore() {
+    setLoadingMore(true);
+    await listRef.startAfter(lastDocs).limit(5)
+    .get()
+    .then((snapshot)=> {
+      updateState(snapshot);
+    })
+  }
+
+  //renderização condicional
+  if(loading) {
+    return(
+      <div>
+        <Header/>
+          <div className="content">
+            <Title name="Operações">
+              <MdPayment color="#FFF" size={25}/>
+            </Title>
+          </div>
+
+          <div className="container digital" >
+            <span>Buscando Pagamentos ...</span>     
+          </div>   
+      </div>
+    )
+  }
+  
 
   return (
     <div>
@@ -55,26 +154,29 @@ export default function Digital() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td data-label="Tipo">Pix</td>
-                  <td data-label="Recebedor">Renner</td>
-                  {/*<td data-label="Status">
-                    <span className="badge" style={{backgroundColor: '#5cb85c' }}>Em aberto</span>
-            </td> */}
-                  <td data-label="Data">20/06/2021</td>
-                  <td data-label="Valor">R$ 100,00</td>
-                  <td data-label="#">
-                    <button className="action" style={{backgroundColor: '#3583f6' }}>
-                      <FiSearch color="#FFF" size={17} />
-                    </button>
-                    <button className="action" style={{backgroundColor: '#F6a935' }}>
-                      <FiEdit2 color="#FFF" size={17} />
-                    </button>
-                  </td>
-                </tr>
+                {pagamentos.map((item, index) => {
+                  return (
+                    <tr key={index}>
+                      <td data-label="Tipo">{item.tipo}</td>
+                      <td data-label="Recebedor">{item.recebedor}</td>
+                      <td data-label="Data">{item.createdFormated}</td>
+                      <td data-label="Valor">{item.valor}</td>
+                      <td data-label="#">
+                        <button className="action" style={{backgroundColor: '#3583f6' }}>
+                          <FiSearch color="#FFF" size={17} />
+                        </button>
+                        <button className="action" style={{backgroundColor: '#F6a935' }}>
+                          <FiEdit2 color="#FFF" size={17} />
+                        </button>
+                      </td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
+           {loadingMore && <h3 style={{textAlign: 'center', marginTop: 15}}>Buscando Dados...</h3>}
+           {!loadingMore && !isEmpty && <button className="btn-more" onClick={handleMore}>Buscar mais Pagamentos</button>}
           </>
         )}
 

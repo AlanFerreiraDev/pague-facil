@@ -10,7 +10,6 @@ import avatar from '../../assets/avatar.png';
 
 //icons
 import { IoHome } from "react-icons/io5";
-import { FaUser } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 
 //css
