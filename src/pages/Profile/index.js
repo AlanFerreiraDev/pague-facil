@@ -110,9 +110,9 @@ export default function Profile(){
           <IoSettingsSharp color="#FFF" size={25} />
         </Title>
 
-        <div className="container">
+        <div className="container-profile">
           <form className="form-profile" onSubmit={handleSave}>
-            <label className="label-avatar">
+            <label className="label-avatar-profile">
               <span>
                 <FiUpload color="#FFF" size={25} />
               </span>
@@ -136,7 +136,7 @@ export default function Profile(){
           </form>
         </div>
 
-        <div className="content-logout">
+        <div className="content-logout-profile">
           <button className="logout-btn" onClick={() => signOut()} >
             Sair
           </button>

@@ -1,0 +1,158 @@
+.container {
+  width: auto !important;
+  background-color: #b8d8c0 !important;
+}
+
+.digital {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.digital table {
+  border: 1px solid #CCC;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.digital table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+.digital table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+.digital table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.digital table td .action {
+  border: 0;
+  padding: 5px;
+  margin-right: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.digital table td .action svg {
+  vertical-align: middle;
+}
+
+.digital table td .badge {
+  padding: 3px;
+  border-radius: 3px;
+  color: #FFF;
+}
+
+.digital table th, .digital table td {
+  padding: .62em;
+  text-align: center;
+}
+
+.digital .new {
+  float: right;
+  margin-bottom: 1.5em;
+  background-color: #74baa0;
+  color: #FFF;
+  border: 0;
+  padding: 6px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  border-radius: 6px;
+  -webkit-transition: ease-in .2s;
+  transition: ease-in .2s;
+}
+
+.digital .new svg {
+  margin-right: 5px;
+}
+
+.digital .new:hover {
+  background-color: #3e9278;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.digital span {
+  margin: 2em 0;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 650px) {
+  .new {
+    padding: 6px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .65em;
+  }
+  table td {
+    border-bottom: 1px solid #DDD;
+    display: block;
+    font-size: .8em;
+    text-align: right !important;
+  }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+/*# sourceMappingURL=digital.css.map */

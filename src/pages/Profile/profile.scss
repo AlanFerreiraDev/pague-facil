@@ -3,7 +3,7 @@ body {
 }
 .container {
   display: flex;
-  background-color: #b8d8c0;
+  // background-color: #b8d8c0;
   border-radius: 5px;
   padding: .8em;
   align-items: center;
@@ -115,6 +115,127 @@ body {
   }
 }
 
+////////////////////
+
+
+.container-profile {
+  display: flex;
+  // background-color: #b8d8c0;
+  border-radius: 5px;
+  padding: .8em;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 300px;
+
+  .form-profile {
+    display: flex;
+    flex-direction: column;
+ 
+    img {
+      margin-bottom: 1em;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    label {
+      margin-bottom: .5em;
+      font-size: 1.4em;
+    }
+
+    input, textarea, select {
+      margin-bottom: 1em;
+      padding: .7em;
+      border: 0;
+      border-radius: 5px;
+      max-width: 600px;
+    }
+
+    input:disabled {
+      cursor: not-allowed;
+    }
+
+    button {
+      height: 35px;
+      border: 0;
+      border-radius: 7px;
+      background-color: #3e9278;
+      color: #FFF;
+      font-size: 1.3em;
+      font-family: 'Rubik', sans-serif;
+      transition: filter 1s;
+      
+      &[type="submit"] {
+        margin-bottom: 1em;
+      }
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+
+  }
+
+  .label-avatar-profile {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 1rem 2rem;
+
+    img {
+      width: 170px;
+      margin: auto;
+      // height: 350px;
+    }
+
+    input {
+      display: none;
+    }
+
+    span {
+      z-index: 99;
+      position: absolute;
+      opacity: 0.7;
+      transition: all .5s;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.4);
+        cursor: pointer;
+      }
+    }
+  }
+  }
+}
+
+.content-logout-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .logout-btn {
+    width: 5em;
+    height: 35px;
+    border: 0;
+    border-radius: 7px;
+    background-color: #3e9278;
+    color: #FFF;
+    font-size: 1.3em;
+    font-family: 'Rubik', sans-serif;
+    transition: filter 1s;
+    background-color: rgba(255, 0, 0, 0.7);
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+}
+
+
+/////////////////////
+
 
 
 @media screen and (min-width: 300px) and (max-width: 700px) {
@@ -155,7 +276,14 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  form {
+  form img{
     width: 75% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      margin: auto !important;
+    }
   }
 }
