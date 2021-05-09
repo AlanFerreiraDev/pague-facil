@@ -12,10 +12,13 @@ import firebase from '../../services/firebaseConnection';
 //date-format
 import { format } from 'date-fns';
 
+//modal
+import Modal from '../../components/Modal';
+
 //icons
 import { MdPayment } from 'react-icons/md';
 import { TiPlus } from 'react-icons/ti';
-import { FiSearch, FiEdit2 } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 
 //styles
 import './digital.css';
@@ -29,8 +32,27 @@ export default function Digital() {
   const [loadingMore, setLoadingMore] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
   const [lastDocs, setLastDocs] = useState();
+  const [showPostModal, setShowPostModal] = useState(false);
+  const [detail, setDetail] = useState();
 
   useEffect(()=> {
+
+    async function loadPagamentos() {
+      await listRef.limit(5)
+      .get()
+      //snapshot para entrar na documentação do firebase
+      .then((snapshot)=> {
+        updateState(snapshot)
+  
+      })
+      .catch((err)=> {
+        console.log(`Erro: ${err}`);
+        setLoadingMore(false);
+      })
+  
+      setLoading(false);
+  
+    }
 
     loadPagamentos();
 
@@ -39,23 +61,6 @@ export default function Digital() {
     }
   }, []);
 
-
-  async function loadPagamentos() {
-    await listRef.limit(5)
-    .get()
-    //snapshot para entrar na documentação do firebase
-    .then((snapshot)=> {
-      updateState(snapshot)
-
-    })
-    .catch((err)=> {
-      console.log(`Erro: ${err}`);
-      setLoadingMore(false);
-    })
-
-    setLoading(false);
-
-  }
 
   async function updateState(snapshot) {
     const isCollectionEmpty = snapshot.size === 0;
@@ -95,6 +100,13 @@ export default function Digital() {
     .then((snapshot)=> {
       updateState(snapshot);
     })
+  }
+
+  //modal
+  function togglePostModal(item) {
+    setShowPostModal(!showPostModal); //Fica trocando de true para false
+    setDetail(item);
+    console.log(item);
   }
 
   //renderização condicional
@@ -162,11 +174,8 @@ export default function Digital() {
                       <td data-label="Data">{item.createdFormated}</td>
                       <td data-label="Valor">{item.valor}</td>
                       <td data-label="#">
-                        <button className="action" style={{backgroundColor: '#3583f6' }}>
+                        <button className="action" style={{backgroundColor: '#3583f6' }} onClick={ () => togglePostModal(item)}>
                           <FiSearch color="#FFF" size={17} />
-                        </button>
-                        <button className="action" style={{backgroundColor: '#F6a935' }}>
-                          <FiEdit2 color="#FFF" size={17} />
                         </button>
                       </td>
                     </tr>
@@ -178,11 +187,14 @@ export default function Digital() {
            {loadingMore && <h3 style={{textAlign: 'center', marginTop: 15}}>Buscando Dados...</h3>}
            {!loadingMore && !isEmpty && <button className="btn-more" onClick={handleMore}>Buscar mais Pagamentos</button>}
           </>
-        )}
-
-
-        
+        )}       
       </div>
+      {showPostModal && (
+        <Modal
+          conteudo={detail}
+          close={togglePostModal} 
+        />
+      )}
     </div>
   )
 }

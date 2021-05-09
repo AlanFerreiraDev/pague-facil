@@ -288,6 +288,7 @@ body {
   transition: filter 1s;
   transition: filter 1s, -webkit-filter 1s;
   background-color: rgba(255, 0, 0, 0.7);
+  margin-left: 10px;
 }
 
 .content-logout-profile .logout-btn:hover {

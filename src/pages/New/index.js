@@ -4,9 +4,6 @@ import Title from '../../components/Title';
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../contexts/auth';
 
-//format valor
-import { mask, UnMask } from 'remask';
-
 //icons and toast
 import { TiPlus } from 'react-icons/ti';
 import { toast } from 'react-toastify';
