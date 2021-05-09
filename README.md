@@ -3,7 +3,6 @@
 
  - Para rodar o projeto voce precisa rodar o comando ``` yarn start ou npm start ```;
 
-
 ### Tecnologias, Banco de dados e Bibliotecas instaladas
 
  - Banco de Dados -> Firebase = Comando que usei para instalação ``` yarn add firebase ou npm install firebase ```;
@@ -11,7 +10,11 @@
  - Alertas -> Toastify = Comando que usei para instalação ``` npm install react-toastify ou yarn ass react-toastify ```;
  - Ícones -> React Icons = Comando que usei para instalação ``` npm install react-icons ou yarn add react-icons ```;
  - Datas -> date-fns = Comando que usei para instalação ``` npm install date-fns ou yarn add date-fns ```;
- - Formatar Valor -> Remask = Comando que usei para instalação ``` yarn add vanilla-masker remask ou npm install vanilla-masker remask ```
+- Form -> Unform = Comando que usei para instalação ``` npm install @unform/core @unform/web ou yarn add @unform/core @unform/web ```;
+- Validação -> Yup = COmando que eu utilizei para instalação ``` npm install yup ou yarn add yup ```;
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

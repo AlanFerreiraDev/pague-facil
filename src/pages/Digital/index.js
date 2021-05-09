@@ -40,7 +40,6 @@ export default function Digital() {
     async function loadPagamentos() {
       await listRef.limit(5)
       .get()
-      //snapshot para entrar na documentação do firebase
       .then((snapshot)=> {
         updateState(snapshot)
   
@@ -61,7 +60,6 @@ export default function Digital() {
     }
   }, []);
 
-
   async function updateState(snapshot) {
     const isCollectionEmpty = snapshot.size === 0;
 
@@ -80,8 +78,8 @@ export default function Digital() {
           valor: doc.data().valor
         })
       })
-      //buscar ultimo item buscado
-      const lastDoc = snapshot.docs[snapshot.docs.length -1];
+
+      const lastDoc = snapshot.docs[snapshot.docs.length - 1];
       //pega todos os pagamentos e se carregou mais acrescenta as listas a mais
       setPagamentos(pagamentos => [...pagamentos, ...lista])
       setLastDocs(lastDoc);
@@ -162,7 +160,7 @@ export default function Digital() {
                   {/*<th scope="col">Status</th>*/}
                   <th scope="col">Data</th>
                   <th scope="col">Valor</th>
-                  <th scope="col">#</th>
+                  <th scope="col">Resumo</th>
                 </tr>
               </thead>
               <tbody>
@@ -173,7 +171,7 @@ export default function Digital() {
                       <td data-label="Recebedor">{item.recebedor}</td>
                       <td data-label="Data">{item.createdFormated}</td>
                       <td data-label="Valor">{item.valor}</td>
-                      <td data-label="#">
+                      <td data-label="Resumo">
                         <button className="action" style={{backgroundColor: '#3583f6' }} onClick={ () => togglePostModal(item)}>
                           <FiSearch color="#FFF" size={17} />
                         </button>

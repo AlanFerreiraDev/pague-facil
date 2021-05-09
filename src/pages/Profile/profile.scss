@@ -115,9 +115,6 @@ body {
   }
 }
 
-////////////////////
-
-
 .container-profile {
   display: flex;
   // background-color: #b8d8c0;
@@ -232,48 +229,6 @@ body {
       filter: brightness(0.8);
     }
   }
-}
-
-
-/////////////////////
-
-
-
-@media screen and (min-width: 300px) and (max-width: 700px) {
-  
-  .content {
-    margin-top: 20px;
-    display: grid;
-    grid-template-areas: 
-    "title container"
-    "content-logout container";
-    grid-gap: 20px;
-    
-    .container {
-      grid-area: "container";
-      grid-row: container;
-      
-    }
-    
-    .content-logout {
-      grid-area: "content-logout";
-      grid-row: content-logout;
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-    }
-    
-  }
-  .title {
-    grid-area: "title";
-    grid-row: title;
-    
-    width: 100%;
-    
-  }
-  
 }
 
 @media screen and (max-width: 800px) {

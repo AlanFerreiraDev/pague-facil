@@ -18,7 +18,7 @@ export default function New(){
   const [tipo, setTipo] = useState('Pix');
   const [recebedor, setRecebedor] = useState('');
   const [boleto, setBoleto] = useState('');
-  const [valor, setValor] = useState(0);
+  const [valor, setValor] = useState('');
 
   const { user } = useContext(AuthContext);
 
@@ -31,27 +31,33 @@ export default function New(){
   async function handleRegister(e){
     e.preventDefault();
 
-    await firebase.firestore().collection('payments')
-    .add({
-      created: new Date(),
-      tipo: tipo,
-      recebedor: recebedor,
-      boleto: boleto,
-      valor: valor,
-      userId: user.uid
-    })
-    .then(() => {
-      toast.success('Pagamento realizado com sucesso, aguarde a compensação do Recebedor');
-      setTipo('Pix');
-      setRecebedor('');
-      setBoleto('');
-      setValor(0);
-    })
-    .catch((err) => {
-      toast.error('Ops, erro ao registar seu pagamento, por favor tente mais tarde.');
-      //segurança
-      console.log(err);
-    })
+    if(recebedor !== '' && boleto !== '' && valor !== '') {
+      await firebase.firestore().collection('payments')
+      .add({
+        created: new Date(),
+        tipo: tipo,
+        recebedor: recebedor,
+        boleto: boleto,
+        valor: valor,
+        userId: user.uid
+      })
+      .then(() => {
+        toast.success('Pagamento realizado com sucesso, aguarde a compensação do Recebedor');
+        setTipo('Pix');
+        setRecebedor('');
+        setBoleto('');
+        setValor(0);
+      })
+      .catch((err) => {
+        toast.error('Ops, erro ao registar seu pagamento, por favor tente mais tarde.');
+        //segurança
+        console.log(err);
+      })
+      
+    } else {
+      toast.error('Existem campos vazios');
+    }
+
   }
 
   //Troca Tipo
@@ -95,7 +101,7 @@ export default function New(){
 
             <label>Valor</label>
 
-            <input id="currency" type="number" value={valor} placeholder="Valor Pagto." onChange={(e) => setValor(e.target.value) } />
+            <input id="currency" type="text" value={valor} placeholder="Valor Pagto." onChange={(e) => setValor(e.target.value) } />
             
             <button type="submit">Pagar</button>
 

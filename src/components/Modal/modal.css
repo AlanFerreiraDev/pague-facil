@@ -66,6 +66,7 @@
           align-items: center;
   padding: 4px 15px;
   border-radius: 5px;
+  font-family: 'Rubik', sans-serif;
 }
 
 .close svg {
