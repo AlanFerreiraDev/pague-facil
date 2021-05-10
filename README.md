@@ -1,8 +1,11 @@
 # App Pague Facil
 ## Iniciar projeto
 
- - Clone o repositório no endereço: https://github.com/AlanFerreiraDev/pague-facil;
- - Para rodar o projeto voce precisa rodar o comando ``` yarn start ou npm start ```;
+ - Voce precisa ter instalado em sua máquina, o node(npm), yarn (Caso prefira), e o git.
+ - Clone o repositório no endereço: https://github.com/AlanFerreiraDev/pague-facil.
+ - Entre na pasta pague-facil no projeto já clonado.
+ - Para instalar as dependencias do Projeto voce precisa rodar dentro dessa pasta o comando ``` npx install ou yarn install ```.
+ - Depois de finalizar o processo, voce precisa rodar o comando ``` yarn start ou npm start ```;
  - Não esquecendo que voce precisa ter o node, npm e yarn instalados na sua máquina, além de uma IDE, eu recomendo o VSCODE.
 
 ## Tecnologias, Banco de dados e Bibliotecas instaladas
@@ -24,9 +27,6 @@ A página de Cadastro que da mesma forma que a Signin tem um form com 03 campos 
 
 ### - Digital 
 Seria nossa Carteira Digital onde temos o Header com os Links para a própria carteira, e a parte de Configurações do seu perfil. Na parte de Operações temos alguns hooks: 
-
-Teste
-
     
       const [pagamentos, setPagamentos] = useState([]);
       const [loading, setLoading] = useState(true);
@@ -52,7 +52,7 @@ Teste
 
   ### - New
   A página de New é aberta através de um Link dentro da paǵina Digital, e onde voce vai registrar seus pagamentos.
-  - Lá temos os cmapos Tipo, Recebedor, Boleto se necessário, e Valor.
+  - Lá temos os cmapos Tipo, Recebedor e Valor.
   - Existe uma validação se os campos estiverem vazios e uma mensagem vai aparecer através de uma biblioteca chamado tostify.
   - Tenho um hook de useState para cada item do form, e todos começam com o valor inicial como uma string vazia, exceto o Tipo que contém o Pix.
   - Tenha uma função assíncrona para acessar os dados do Banco de Dados e adicionar o registro de pagamento.
