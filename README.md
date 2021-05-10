@@ -122,7 +122,8 @@ Seria nossa Carteira Digital onde temos o Header com os Links para a própria ca
   - Nessa página preencha as informações de Tipo, Recebedor, Boleto e Valor e clique em Pagar.
   - A mensagem de pagamentos irá paarecer do lado direito da tela "Pagamento realizado com sucesso, aguarde a compensação do Recebedor"
   - Clique novamente em Carteira Digital e veja seu pagamento na tabela, por ordem de Data decrescente, da maior para menor.
-  - Clcando na lupa Azul voce irá ver o resumo do seu pagamento.
+  - Clicando na lupa Azul voce irá ver o resumo do seu pagamento.
+  - O Botão de Sair da aplicação está na página de COnfirações.
 
 
 
