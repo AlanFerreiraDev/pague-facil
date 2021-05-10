@@ -22,12 +22,6 @@ export default function New(){
 
   const { user } = useContext(AuthContext);
 
-  //Para quando logar minhas aplicação puxar os dados do BD
-  useEffect(()=> {
-
-  });
-
-
   async function handleRegister(e){
     e.preventDefault();
 
