@@ -109,6 +109,8 @@ function AuthProvider({ children }) {
 
   return (
     // !!user, converte valor para booleano, user = obj
+    // Pois preciso fazer a verificação, pois signed em routes/Route.js é um objeto
+    // Porém meu user no primeiro hook, vai ser um booleano
     <AuthContext.Provider 
       value={{ 
         signed: !!user, 

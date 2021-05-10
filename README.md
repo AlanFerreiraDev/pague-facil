@@ -15,7 +15,7 @@
 - Form -> Unform = Comandos para instalação ``` npm install @unform/core @unform/web ou yarn add @unform/core @unform/web ```;
 - Validação -> Yup = Comandos para instalação ``` npm install yup ou yarn add yup ```;
 
-## O Projeto contém 05 Páginas
+## O Projeto e sua Base Lógica
  ### - Sigin
  A página de Login, com os campos email e password, nela temos na lógica de guardar os dados de email e password em um useState, esse UseState é repassado ao contexto que vai fazer a parte de autenticação e gravação no Firebase;
 
@@ -25,7 +25,7 @@ A página de Cadastro que da mesma forma que a Signin tem um form com 03 campos 
 ### - Digital 
 Seria nossa Carteira Digital onde temos o Header com os Links para a própria carteira, e a parte de Configurações do seu perfil. Na parte de Operações temos alguns hooks: 
 
-    ``` bash
+    
       const [pagamentos, setPagamentos] = useState([]);
       const [loading, setLoading] = useState(true);
       const [loadingMore, setLoadingMore] = useState(false);
@@ -33,7 +33,7 @@ Seria nossa Carteira Digital onde temos o Header com os Links para a própria ca
       const [lastDocs, setLastDocs] = useState();
       const [showPostModal, setShowPostModal] = useState(false);
       const [detail, setDetail] = useState(); 
-    ```
+    
     - pagamentos, guarda o valor e seta, começando com um array vazio; <br>
     - loading, para fazer o efeito do texto Procurando Pagamentos enquanto a página carrega; <br>
     - loadingMore, é em relação ao botão de Mais Pagamentos, quando voce tem mais de 5 registrados; <br>
@@ -95,10 +95,34 @@ Seria nossa Carteira Digital onde temos o Header com os Links para a própria ca
        - Seto os componentes de cada rota e defino as páginas isPrivate (páginas que o user śo irá acessar se estiver logado). 
 
   ### - contexts
-  Diretório de Contextos do contextAPI, com o arquivos auth.js.
-    - O arquivo auth.js, tem o contexto geral criado.
-    - 
-    
+  Diretório de Contextos do contextAPI, com o arquivos auth.js. <br>
+  - O arquivo auth.js, criado o contexto como um objeto vazio. <br>
+  - Hook: ``` [user, setUser] = useState(null)  ```, para saber se temos user logado. <br>
+  - Hook: ``` [loadingAuth, setLoadingAuth] = useState(false) ```, para controlar o tempo em que o user está logando e fazer aparecer a mensagem Carregando ... <br>
+  - Hook: ``` [loading, setLoading] = useState(true) ```, para fazer o conrole no localStore do Browser. <br>
+
+    - Uso um UseEffect para saber se existe user no localStorage e seto o Loading.
+    - Duas funções assíncronas para o Login e Cadastro de Users. 
+    - Função para salvar uma string(JSON), no localStorage. 
+    - Retorno o contexto com todas as informações que vou utilizar.
+
+  ## Pontos e Considerações
+
+   - Acredito que a parte Visual e Fluída, onde temos o CSS utilizando animações, e maior parte de seu conteúdo com display: flex, eu tinha utilizado em alguns momentos display: grid, porém não gostei do resultado no fim.
+   - A Organização de pastas está feita de forma clara e objetiva, cada pagina tem seu CSS dentro do mesmo diretório, os componentes que não saõ páginas estão isolados m um diretório separado, assim como as rotas e serviço de conexão com o Firebase.
+   - Utilização do Firebase, para mim foi mais tranquilo de mostrar os resultados e uma forma de aprendizado, já que neu não conhecia muito bem a parte de Cloud, mesmo sendo uma base ferramentas de "Back-End" comparada a Google Cloud, mas já foi uma maneira de aprender bastante hehe.
+   - Existe uma falha no Banco, que eu queria ajuda inclusive kk. Eu não consegui separar os pagamentos para cada user, então infelizmente todo user vai acabar vendo todos os pagamentos. Sei que é uma falha de segurança, porém eu tentei fazer uma consulta filtrando os pagamentos pelo UserId e consegui, porém na hora de renderizar as informações estavam vazias. SE TIVEREM PALPITES PARA ME AJUDAR, EU AGRADEÇO MUITO hehe.
+   
+   ## Manual Rápido de utilização
+
+  - Começamos na tela de Login, onde voce irá preencher caso tenha um usuário cadastrado, caso não clique em "Faça parte dos PagLovers uma conta agora".
+  - Voce vai para a página de cadastro, onde preencherá suas informações de Nome, email e Senha, e caso tudo esteja de acordo, voce irá automaticamente entrar no APP.
+  - Entrando no APP vce pode entrar em COnfigurações e clicar na imagem de Perfil, colocar uma foto e modificar seu nome, clicando em Salvar a imagem e o nome irão ser gravadas no Banco de dados.
+  - Clique em Carteira Digital e faça seu primeiro Pagamento, clicando em Novo Pagamento.
+  - Nessa página preencha as informações de Tipo, Recebedor, Boleto e Valor e clique em Pagar.
+  - A mensagem de pagamentos irá paarecer do lado direito da tela "Pagamento realizado com sucesso, aguarde a compensação do Recebedor"
+  - Clique novamente em Carteira Digital e veja seu pagamento na tabela, por ordem de Data decrescente, da maior para menor.
+  - Clcando na lupa Azul voce irá ver o resumo do seu pagamento.
 
 
 
