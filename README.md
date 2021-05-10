@@ -52,7 +52,7 @@ Seria nossa Carteira Digital onde temos o Header com os Links para a própria ca
 
   ### - New
   A página de New é aberta através de um Link dentro da paǵina Digital, e onde voce vai registrar seus pagamentos.
-  - Lá temos os cmapos Tipo, Recebedor e Valor.
+  - Lá temos os campos Tipo, Recebedor, Boleto e Valor.
   - Existe uma validação se os campos estiverem vazios e uma mensagem vai aparecer através de uma biblioteca chamado tostify.
   - Tenho um hook de useState para cada item do form, e todos começam com o valor inicial como uma string vazia, exceto o Tipo que contém o Pix.
   - Tenha uma função assíncrona para acessar os dados do Banco de Dados e adicionar o registro de pagamento.
