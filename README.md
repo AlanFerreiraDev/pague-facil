@@ -34,13 +34,13 @@ Seria nossa Carteira Digital onde temos o Header com os Links para a própria ca
       const [showPostModal, setShowPostModal] = useState(false);
       const [detail, setDetail] = useState(); 
     
-    - pagamentos, guarda o valor e seta, começando com um array vazio; <br>
-    - loading, para fazer o efeito do texto Procurando Pagamentos enquanto a página carrega; <br>
-    - loadingMore, é em relação ao botão de Mais Pagamentos, quando voce tem mais de 5 registrados; <br>
-    - isEmpty, para saber se está vazia lista, aí fiz uma condicional que faz o Texto de Nenhum chamado aparecer ou não setado a partir do estado; <br>
-    - lastDocs, para quando ele for procurar mais pagamentos, ele não replicar o último.
-    - showPostModal, que começa como false, e como é um toggle, toda vez que eu clicar vai mudar o estado, para fazer a tela de resumo do pagamento.
-    - detail, relacionado ao conteúdo do Modal também.
+  - pagamentos, guarda o valor e seta, começando com um array vazio; <br>
+  - loading, para fazer o efeito do texto Procurando Pagamentos enquanto a página carrega; <br>
+  - loadingMore, é em relação ao botão de Mais Pagamentos, quando voce tem mais de 5 registrados; <br>
+  - isEmpty, para saber se está vazia lista, aí fiz uma condicional que faz o Texto de Nenhum chamado aparecer ou não setado a partir do estado; <br>
+  - lastDocs, para quando ele for procurar mais pagamentos, ele não replicar o último.
+  - showPostModal, que começa como false, e como é um toggle, toda vez que eu clicar vai mudar o estado, para fazer a tela de resumo do pagamento.
+  - detail, relacionado ao conteúdo do Modal também.
 
   - Logo depois utilizo um hook Useeffect com funções assincronas, para fazer operações no Banco de dados, de loading, pagamentos e defino uma pesquisa de 5 pagamentos por vez.
   - Verifico em outra função assincrona, o estado da lista de pagamentos, se está veazia ou não e então seto em um array todos os dados coletados do Banco de dados, para usar posteriormete na renderização na tela.
