@@ -3,7 +3,7 @@
 
  - Voce precisa ter instalado em sua máquina, o node(npm), yarn (Caso prefira), e o git.
  - Clone o repositório no endereço: https://github.com/AlanFerreiraDev/pague-facil.
- - Entre na pasta pague-facil no projeto já clonado.
+ - Entre na pasta /pague-facil no projeto já clonado.
  - Para instalar as dependencias do Projeto voce precisa rodar dentro dessa pasta o comando ``` npx install ou yarn install ```.
  - Depois de finalizar o processo, voce precisa rodar o comando ``` yarn start ou npm start ```;
  - Não esquecendo que voce precisa ter o node, npm e yarn instalados na sua máquina, além de uma IDE, eu recomendo o VSCODE.
