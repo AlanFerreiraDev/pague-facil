@@ -1,14 +1,14 @@
 # App Pague Facil
 ## Iniciar projeto
 
- - Voce precisa ter instalado em sua máquina, o node(npm), yarn (Caso prefira), e o git.
+ - Voce precisa ter instalado em sua máquina, o node(npm), yarn (Caso prefira) o git, e uma IDE, eu recomendo o VS CODE.
  - Clone o repositório no endereço: https://github.com/AlanFerreiraDev/pague-facil.
  - Entre na pasta /pague-facil no projeto já clonado.
  - Para instalar as dependencias do Projeto voce precisa rodar dentro dessa pasta o comando ``` npx install ou yarn install ```.
  - Depois de finalizar o processo, voce precisa rodar o comando ``` yarn start ou npm start ```;
- - Não esquecendo que voce precisa ter o node, npm e yarn instalados na sua máquina, além de uma IDE, eu recomendo o VSCODE.
 
 ## Tecnologias, Banco de dados e Bibliotecas instaladas
+ - O projeto foi totalmente desenvolvido em Plataforma Linux (Ubuntu 20.04 LTS), e foi testado em Windows com sucesso.
  - Foram utilizados nesse projeto, React e Sass.
  - Banco de Dados -> Firebase = Comandos para instalação ``` yarn add firebase ou npm install firebase ```;
  - Rotas -> React Router DOM = Comandos para instalação ``` yarn add react-router-dom ou nom install react-router-dom ```;
