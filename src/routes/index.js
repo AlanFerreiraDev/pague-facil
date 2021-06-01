@@ -1,5 +1,5 @@
 //routes component
-import {Switch} from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import Route from './Route';
 
 //pages
@@ -9,9 +9,7 @@ import Digital from '../pages/Digital';
 import Profile from '../pages/Profile';
 import New from '../pages/New';
 
-
 export default function Routes() {
-
   // Rotas Privadas para entrar na regra do Route.js
   return (
     <Switch>
@@ -21,6 +19,5 @@ export default function Routes() {
       <Route exact path="/profile" component={Profile} isPrivate />
       <Route exact path="/new" component={New} isPrivate />
     </Switch>
-  )
+  );
 }
-
